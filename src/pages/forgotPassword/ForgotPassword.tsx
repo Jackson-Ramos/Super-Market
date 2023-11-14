@@ -23,7 +23,7 @@ const ForgotPassword = ({navigation}: any) => {
         <Text>Qual é o seu CPF</Text>
       </View>
 
-      <TextInput placeholder=' Digite seu CPF' style={styles.input}/>
+      <TextInput placeholder=' Digite seu CPF' keyboardType='numeric' style={styles.input}/>
       
       <Button onPress={() => navigation.navigate("NewPasswod")} color={'#1A1'} title='Recuperar minha Senha'/>
 

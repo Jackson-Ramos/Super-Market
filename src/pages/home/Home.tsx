@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, View } from 'react-native';
+import { Button, Pressable, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, View } from 'react-native';
 import styles from './HomeStyle';
 import { Card } from 'react-native-elements';
 
@@ -55,15 +55,31 @@ const Home = ({shoppingCart, setShoppingCart}: any) => {
             <Card.Divider/>
 
             <View style={styles.viewBT}>
-            <Text style={styles.preco}>Preço {products.price}</Text>
-            <Text style={styles.descricao}>descrição: {products.description}</Text>
+              <Text style={styles.preco}>Preço {products.price}</Text>
+              <Text style={styles.descricao}>descrição: {products.description}</Text>
             </View>
 
-            <Button onPress={() => {
-              openToast("Item adicionado ao carrinho!")
-              setShoppingCart([...shoppingCart, products])
-              }} color={'#1A1'}
-              title='comprar'/>
+              <Pressable 
+              onPress={() => {
+                openToast("Item adicionado ao carrinho!")
+                setShoppingCart([...shoppingCart, products])
+              }}
+
+              style={
+                ({pressed}) => (
+                  {
+                    backgroundColor: pressed ? 'blue' : 'green',
+                    height: 40,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 4
+                  }
+                )
+              }
+              >
+                <Text style={{color: 'white', fontSize: 18,  fontWeight: 'bold'}}>Adicionar ao Carrinho </Text>
+              </Pressable>
+
           </Card>
         )
       })

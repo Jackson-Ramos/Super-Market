@@ -22,7 +22,7 @@ const CreatAccount = ({navigation}: any) => {
     <TextInput placeholder=' Ex.exemplo@gmail.com' style={styles.input}/>
 
     <Text>Endereço</Text>
-    <TextInput placeholder=' Ex.Rua das Oliveira n.12' keyboardType='numeric' secureTextEntry={true} style={styles.input}/>
+    <TextInput placeholder=' Ex.Rua das Oliveira n.12' secureTextEntry={true} style={styles.input}/>
 
     <Text>Senha</Text>
     <TextInput placeholder=' Ex.12345' keyboardType='numeric' secureTextEntry={true} style={styles.input}/>
