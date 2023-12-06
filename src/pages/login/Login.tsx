@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import  Icon  from 'react-native-vector-icons/Fontisto';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import styles from './LoginStyle'
@@ -7,6 +7,13 @@ import { ScreenStackHeaderSubview } from 'react-native-screens';
 
 
 const Login = ({navigation}: any) => {
+
+  const [Login, setLogin] = useState('')
+  const [pessword, setPassword] = useState('')
+  
+  const onSubmit = () => {
+   const httpService.login()
+  }
 
   const goToPage = (path: String) => {
     navigation.navigate(path)
